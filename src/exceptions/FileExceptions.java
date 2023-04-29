@@ -17,5 +17,6 @@ public class FileExceptions
     {
         exceptionList.add("initial point is greater than final point");
         exceptionList.add("interval is out of predefined area");
+        exceptionList.add("this line is not exist");
     }
 }
