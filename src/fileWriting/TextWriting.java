@@ -1,7 +1,6 @@
 package fileWriting;
 
 import exceptions.FileExceptions;
-import fileReading.DataReading;
 import fileReading.TextReading;
 
 import java.io.*;
@@ -138,5 +137,12 @@ public class TextWriting
 
         lines.set(line, edited);
         write(path, lines);
+    }
+
+    public static void delete(String path, int line)
+    {
+        ArrayList<String> lines = TextReading.read(path);
+        lines.remove(line);
+        TextWriting.write(path, lines);
     }
 }
