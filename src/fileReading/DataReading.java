@@ -74,17 +74,17 @@ public class DataReading
         {
             ArrayList<String> temp = new ArrayList<>();
             int loc = 0;
-
+            String problem = null;
             while (loc < rows.get(i).length())
             {
                 String item = null;
                 boolean isNeutral = false;
-
+                problem = rows.get(i);
                 while (loc < rows.get(i).length() && (rows.get(i).charAt(loc) != separator || isNeutral))
                 {
                     if (rows.get(i).charAt(loc) == neutralizer)
                     {
-                        if (loc - 1 > 0 && rows.get(i).charAt(loc-1) == '\\')
+                        if (loc - 1 >= 0 && rows.get(i).charAt(loc-1) == '\\')
                         {
                             if (item == null) item = Character.toString(rows.get(i).charAt(loc));
                             else item += Character.toString(rows.get(i).charAt(loc));
@@ -115,7 +115,7 @@ public class DataReading
                 temp.add(item);
                 loc++;
             }
-
+            if (temp.size() != headers.size()) System.out.println(problem);
             for (int j = 0; j < headers.size(); j++) {columns.get(j).add(temp.get(j));}
         }
     }
