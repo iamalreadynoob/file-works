@@ -44,13 +44,11 @@ public class TextWriting
 
         try
         {
-            FileReader fileReader = new FileReader(file);
-            BufferedReader reader = new BufferedReader(fileReader);
+            ArrayList<String> exist = TextReading.read(path);
 
             FileWriter writer = new FileWriter(file);
 
-            String line;
-            while ((line = reader.readLine()) != null) writer.write(line + "\n");
+            for (String exl: exist) writer.write(exl + "\n");
 
             for (int i = 0; i < lines.size(); i++)
             {
