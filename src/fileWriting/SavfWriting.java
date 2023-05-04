@@ -18,9 +18,12 @@ public class SavfWriting
     {
         ArrayList<String> lines = TextReading.read(path);
 
-        for (String l: lines)
+        for (int i = 0; i < lines.size(); i++)
         {
-            if (l.contains("@" + param)) {l = "@" + param + "=" + newValue;}
+            if (lines.get(i).equals("@" + param))
+            {
+                lines.set(i, newValue);
+            }
         }
 
         TextWriting.write(path, lines);
