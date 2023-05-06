@@ -5,11 +5,13 @@ import java.util.ArrayList;
 public class TinfReading
 {
     private ArrayList<String> texts, titles;
+    private ArrayList<ArrayList<String>> rawTexts;
     private String finisher;
     public TinfReading()
     {
         titles = new ArrayList<>();
         texts = new ArrayList<>();
+        rawTexts = new ArrayList<>();
 
         setDefault();
     }
@@ -48,6 +50,7 @@ public class TinfReading
                 }
 
                 texts.add(text);
+                rawTexts.add(temp);
             }
 
             loc++;
@@ -56,6 +59,7 @@ public class TinfReading
 
     public ArrayList<String> getTitles() {return titles;}
     public ArrayList<String> getTexts() {return texts;}
+    public ArrayList<ArrayList<String>> getRawTexts(){return rawTexts;}
 
     public Integer getIndex(String title)
     {

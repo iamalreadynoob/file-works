@@ -60,7 +60,7 @@ public class TextReading
 
     public static Integer getLength(String path)
     {
-        Integer length = null;
+        Integer length = 0;
 
         ArrayList<String> lines = read(path);
 

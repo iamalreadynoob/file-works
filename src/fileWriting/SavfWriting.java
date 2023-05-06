@@ -20,9 +20,9 @@ public class SavfWriting
 
         for (int i = 0; i < lines.size(); i++)
         {
-            if (lines.get(i).equals("@" + param))
+            if (lines.get(i).startsWith("@" + param))
             {
-                lines.set(i, newValue);
+                lines.set(i, "@" + param + "=" + newValue);
             }
         }
 

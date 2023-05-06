@@ -38,6 +38,13 @@ public class TextWriting
         write(path, temp);
     }
 
+    public static void write(String path, String line)
+    {
+        ArrayList<String> temp = new ArrayList<>();
+        temp.add(line);
+        write(path, temp);
+    }
+
     public static void append(String path, ArrayList<String> lines)
     {
         File file = new File(path);
@@ -67,6 +74,14 @@ public class TextWriting
         ArrayList<String> temp = new ArrayList<>();
 
         for (String line: lines) temp.add(line);
+
+        append(path, temp);
+    }
+
+    public static void append(String path, String line)
+    {
+        ArrayList<String> temp = new ArrayList<>();
+        temp.add(line);
 
         append(path, temp);
     }
@@ -103,6 +118,13 @@ public class TextWriting
         ArrayList<String> temp = new ArrayList<>();
         for (String line: appendLines) temp.add(line);
 
+        appendTo(path, temp, before);
+    }
+
+    public static void appendTo(String path, String line, int before)
+    {
+        ArrayList<String> temp = new ArrayList<>();
+        temp.add(line);
         appendTo(path, temp, before);
     }
 
