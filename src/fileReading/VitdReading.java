@@ -25,7 +25,7 @@ public class VitdReading
         tinf.scan(path);
 
         texts = tinf.getRawTexts();
-        headers = tinf.getTexts();
+        headers = tinf.getTitles();
     }
 
     public ArrayList<String> getHeaders() {return headers;}
