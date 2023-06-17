@@ -67,7 +67,7 @@ public class Parsing
 
                 pieces.add(piece);
 
-                if (signs.contains(line.charAt(loc))) pieces.add(Character.toString(line.charAt(loc)));
+                if (loc < line.length() && signs.contains(line.charAt(loc))) {pieces.add(Character.toString(line.charAt(loc)));}
             }
 
             loc++;
